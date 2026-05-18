@@ -184,6 +184,7 @@ use Appwrite\Utopia\Response\Model\ProviderRepositoryFramework;
 use Appwrite\Utopia\Response\Model\ProviderRepositoryFrameworkList;
 use Appwrite\Utopia\Response\Model\ProviderRepositoryRuntime;
 use Appwrite\Utopia\Response\Model\ProviderRepositoryRuntimeList;
+use Appwrite\Utopia\Response\Model\QueryPlanEntry;
 use Appwrite\Utopia\Response\Model\Report;
 use Appwrite\Utopia\Response\Model\ResourceToken;
 use Appwrite\Utopia\Response\Model\Row;
@@ -233,6 +234,10 @@ Response::setModel(new None());
 Response::setModel(new Any());
 Response::setModel(new Error());
 Response::setModel(new ErrorDev());
+
+// Diagnostics
+Response::setModel(new QueryPlanEntry());
+Response::setModel(new BaseList('Query Plan', Response::MODEL_QUERY_PLAN, 'queries', Response::MODEL_QUERY_PLAN_ENTRY, paging: false));
 
 // Lists
 Response::setModel(new BaseList('Rows List', Response::MODEL_ROW_LIST, 'rows', Response::MODEL_ROW));
